@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="jquery.fullPage.min.css" />
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons|" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        
+        <style>
+            
+            .central {
+                width: 600px;
+                height: auto;
+            }
+            
+            .show-me {
+                transform: translateZ(0);
+                opacity: 0;
+                margin-top: 400px;
+                transition: all 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+            
+            .show-me.reveal {
+                opacity: 1;
+                margin-top: 0;
+            }
+            
+            .txt-big {
+                margin-left: 100px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 100;
+                font-size: 80px;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+
+        <div id="fullpage">
+            
+            <div class="section one" style="background:url(identity2.jpg); background-size: cover; background-position: center;"><a id="fab" class="btn-floating btn-large waves-effect waves-light" onclick="nextSection()" style="position: fixed;bottom: 50px; right: 150px; background: #FFFFFF;"><i class="material-icons" style="color: black;">keyboard_arrow_down</i></a></div>
+            
+            <div class="section two" style="background:url(door.jpg); background-size: cover; background-position: center;"><div class="txt-big show-me" style="float:left;width: 600px;">7" UDOO-based wall central</div><img class="central show-me" src="mockup.png" style="float:left;transition-delay:.2s;"></div>
+            
+            <div class="section three" style="background:url(sensors.png); background-size: cover; background-position: center;"><img class="show-me" src="sens-triggers.png" style="float:left;transition-delay:.2s;margin-left: 800px; margin-top: 300px;"><div class="txt-big show-me" style="float:left;width: 600px;">Easily connect sensors and triggers</div></div>
+            
+            <div class="section four" style="background:url(notifs.png); background-size: cover; background-position: center;"><div class="txt-big show-me" style="float:left;width: 600px;">Setup your controls and be notified</div><!--<img class="central show-me" src="mockup.png" style="float:left;transition-delay:.2s;">--></div>
+            
+            <div class="section five" style="background:url(alz.jpg); background-size: cover; background-position: center;"><div class="txt-big show-me" style="float:left;width: 600px; color: white;">Use it to control and take care of your elder relatives</div></div>
+            
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="jquery.fullPage.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#fullpage').fullpage({
+                    fixedElements: '#fab',
+                    afterLoad: function(anchorLink, index){
+                        
+                        if(index == 2){
+                            $('.section.two .show-me').toggleClass('reveal');
+                        } else if(index == 3) {
+                            $('.section.three .show-me').toggleClass('reveal');
+                        } else if(index == 4) {
+                            $('.section.four .show-me').toggleClass('reveal');
+                        } else if(index == 5) {
+                            $('.section.five .show-me').toggleClass('reveal');
+                        }
+                    }
+                });
+                                
+            });
+            
+            function nextSection() {
+                $.fn.fullpage.moveSectionDown();
+            }
+            
+            
+            
+        </script>
+    </body>
+</html>
