@@ -40,7 +40,7 @@
 
         <div id="fullpage">
             
-            <div class="section one" style="background:url(identity2.jpg); background-size: cover; background-position: center;"><a id="fab" class="btn-floating btn-large waves-effect waves-light" onclick="nextSection()" style="position: fixed;bottom: 50px; right: 150px; background: #FFFFFF;"><i class="material-icons" style="color: black;">keyboard_arrow_down</i></a></div>
+            <div class="section one" style="background:url(identity2.jpg); background-size: cover; background-position: center; text-align:center;"><a href="https://github.com/gmacario/wtf-docs" style="display: block; padding-top:500px;">GitHub Repository</a><a id="fab" class="btn-floating btn-large waves-effect waves-light" onclick="nextSection()" style="position: fixed;bottom: 50px; right: 150px; background: #FFFFFF;"><i class="material-icons" style="color: black;">keyboard_arrow_down</i></a></div>
             
             <div class="section two" style="background:url(door.jpg); background-size: cover; background-position: center;"><div class="txt-big show-me" style="float:left;width: 600px;">7" UDOO-based wall central</div><img class="central show-me" src="mockup.png" style="float:left;transition-delay:.2s;"></div>
             
@@ -49,6 +49,17 @@
             <div class="section four" style="background:url(notifs.png); background-size: cover; background-position: center;"><div class="txt-big show-me" style="float:left;width: 600px;">Setup your controls and be notified</div><!--<img class="central show-me" src="mockup.png" style="float:left;transition-delay:.2s;">--></div>
             
             <div class="section five" style="background:url(alz.jpg); background-size: cover; background-position: center;"><div class="txt-big show-me" style="float:left;width: 600px; color: white;">Use it to control and take care of your elder relatives</div></div>
+            
+            <div class="section six" style="background:url(architecture.jpg); background-size: cover; background-position: center;"></div>
+            
+            <div class="section seven"><div class="txt-big show-me" style="float:left;width: 600px;">Our team</div><div class="show-me" style="float:left;width: 600px; font-size:20px;">Gianpaolo Macario - Architecture, Continuous Integration, Linux kernel hacker<br>
+                Wilfried Mbouenda Mbogne - Architecture, Android guru<br>
+                Giuseppe Nesca - Java, Android, Xml , Input/Output<br>
+Alessandro Censi - Java, Android<br>
+Paolo Marino - Java, Database<br>
+Alessandro Morelli - Java, Android<br>
+Umberto Pepato - Branding, UI Design, Presentation Material<br>
+Alessandro Szewera - Presentation, Marketing Spetialist</div></div>
             
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -68,6 +79,8 @@
                             $('.section.four .show-me').toggleClass('reveal');
                         } else if(index == 5) {
                             $('.section.five .show-me').toggleClass('reveal');
+                        } else if(index == 7) {
+                            $('.section.seven .show-me').toggleClass('reveal');
                         }
                     }
                 });
